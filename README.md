@@ -18,7 +18,7 @@ A one-source local smoke run completed with SmolVLM-500M. It fit comfortably, bu
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TharunChougoni/doctrust-vlm/blob/main/notebooks/doctrust_colab.ipynb)
 
-The repository is private. Authorize private GitHub repositories in Colab to open the notebook, then use the notebook's read-only `GITHUB_TOKEN` secret workflow to clone the code.
+The repository is public, so the Colab notebook clones it directly without credentials or secrets.
 
 ## Models
 

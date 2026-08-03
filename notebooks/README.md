@@ -14,7 +14,7 @@ Use this for the main 2.2B experiment:
 - all-sample and clean-correct-conditional metrics;
 - downloadable reproducibility ZIP.
 
-The GitHub repository is private. Enable private-repository access when opening it in Colab, then add a read-only `GITHUB_TOKEN` Colab secret as explained inside the notebook.
+The GitHub repository is public, so Colab can open and clone it without a token or secret.
 
 ## Local learning workflow: `doctrust_mvp.ipynb`
 
