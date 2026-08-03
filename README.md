@@ -29,6 +29,7 @@ Both are configured for 4-bit, batch-one inference. Granite is document-focused;
 configs/                 model and experiment settings
 data/manifests/          JSONL experiment manifests
 docs/                    runbook, learning guide, and study design
+notebooks/               one main, linear MVP notebook
 scripts/                 environment checks (run manually)
 src/doctrust/            corruption, inference, and evaluation code
 tests/                    lightweight tests (not run during setup)
@@ -58,9 +59,23 @@ python -m pip install -r requirements.txt
 
 ## Run order
 
+### Recommended: one main notebook
+
+Open [`notebooks/doctrust_mvp.ipynb`](notebooks/doctrust_mvp.ipynb) and run it from top to bottom. It explains each stage, previews the evidence box and transformed images, clearly marks the GPU/model-download boundary, performs inference, and computes metrics.
+
+In VS Code, select this existing kernel:
+
+```text
+/home/tharun/Projects/hf-course/hf.venv/bin/python
+```
+
+For browser JupyterLab, install `requirements-notebook.txt`. See [`notebooks/README.md`](notebooks/README.md).
+
+### Alternative: command line
+
 Read [`docs/LEARNING_GUIDE.md`](docs/LEARNING_GUIDE.md), then follow [`docs/RUNBOOK.md`](docs/RUNBOOK.md).
 
-The intended commands are:
+The equivalent commands are:
 
 ```fish
 # 1. Check environment; does not download a model
