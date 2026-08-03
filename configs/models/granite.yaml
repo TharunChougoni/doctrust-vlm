@@ -1,0 +1,9 @@
+name: granite
+model_id: ibm-granite/granite-vision-3.2-2b
+architecture: vision2seq
+load_in_4bit: true
+dtype: float16
+max_new_tokens: 64
+notes: >-
+  Primary document-focused model. Start at batch size one. This configuration
+  does not download or run anything by itself.

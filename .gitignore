@@ -11,7 +11,7 @@ venv/
 
 # Models, caches, generated data, and results
 .cache/
-models/
+/models/
 data/raw/*
 !data/raw/.gitkeep
 data/generated/*
