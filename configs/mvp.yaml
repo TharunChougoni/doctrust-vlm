@@ -1,0 +1,41 @@
+seed: 17
+
+model:
+  name: granite
+  model_id: ibm-granite/granite-vision-3.2-2b
+  architecture: vision2seq
+  load_in_4bit: true
+  dtype: float16
+  max_new_tokens: 64
+  prompt: >-
+    Answer the question using only visible evidence in the document.
+    If the answer is absent or unreadable, reply exactly UNANSWERABLE.
+    Return only the short answer, without explanation.
+
+data:
+  source_manifest: data/manifests/source.jsonl
+  prepared_manifest: data/manifests/prepared.jsonl
+  generated_dir: data/generated
+
+variants:
+  - name: clean
+    expected_behavior: preserve
+  - name: jpeg_q35
+    transform: jpeg
+    quality: 35
+    expected_behavior: preserve
+  - name: blur_1_5
+    transform: gaussian_blur
+    radius: 1.5
+    expected_behavior: preserve
+  - name: distractor_occlusion
+    transform: distractor_occlusion
+    fill: 128
+    expected_behavior: preserve
+  - name: evidence_occlusion
+    transform: evidence_occlusion
+    fill: 128
+    expected_behavior: abstain
+
+output:
+  predictions: results/predictions.jsonl

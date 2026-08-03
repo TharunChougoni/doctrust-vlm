@@ -1,0 +1,31 @@
+name: Experiment task
+description: Track one reproducible experiment without claiming unrun results.
+title: "[Experiment]: "
+labels: ["experiment"]
+body:
+  - type: input
+    id: model
+    attributes:
+      label: Model ID and revision
+    validations:
+      required: true
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: Configuration and manifest
+      description: Include paths, seed, precision, image settings, and sample count.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance checks
+      description: State what makes the run valid before looking at results.
+    validations:
+      required: true

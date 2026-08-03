@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Environments (the shared environment is ../hf.venv)
+.venv/
+venv/
+
+# Models, caches, generated data, and results
+.cache/
+models/
+data/raw/*
+!data/raw/.gitkeep
+data/generated/*
+!data/generated/.gitkeep
+data/manifests/source.jsonl
+data/manifests/prepared.jsonl
+results/*
+!results/.gitkeep
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Secrets and local settings
+.env
+*.token
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
