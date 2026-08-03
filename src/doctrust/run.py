@@ -12,8 +12,12 @@ from doctrust.profiling import gpu_measurement
 from doctrust.schema import PreparedExample
 
 
-def run(config_path: str | Path) -> Path:
-    """Run deterministic batch-one inference and cache every prediction."""
+def run(config_path: str | Path, model: DocumentVLM | None = None) -> Path:
+    """Run deterministic batch-one inference and cache every prediction.
+
+    A caller such as the notebook may pass an already-loaded model. This avoids
+    allocating a second multi-gigabyte VLM in the same GPU process.
+    """
     config = load_config(config_path)
     prepared_path = Path(config["data"]["prepared_manifest"])
     output_path = Path(config["output"]["predictions"])
@@ -26,7 +30,8 @@ def run(config_path: str | Path) -> Path:
     if output_path.exists():
         completed_ids = {str(row["id"]) for row in read_jsonl(output_path)}
 
-    model = DocumentVLM(config["model"])
+    if model is None:
+        model = DocumentVLM(config["model"])
     for example in tqdm(examples, desc="Document VLM inference"):
         if example.sample_id in completed_ids:
             continue
