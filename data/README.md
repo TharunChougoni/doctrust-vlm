@@ -4,12 +4,12 @@ Raw document images and generated manifests are intentionally excluded from Git.
 
 ## Reproducible multi-example subset
 
-After reviewing the [official DocVQA terms](https://www.docvqa.org/datasets), fetch 10 examples with:
+After reviewing the [official DocVQA terms](https://www.docvqa.org/datasets), fetch the 50-document comparison subset with:
 
 ```bash
 python scripts/fetch_docvqa_samples.py \
-  --count 10 \
-  --scan 150 \
+  --count 50 \
+  --scan 300 \
   --acknowledge-docvqa-terms
 ```
 

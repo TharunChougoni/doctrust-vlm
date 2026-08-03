@@ -32,6 +32,11 @@ def run(config_path: str | Path, model: DocumentVLM | None = None) -> Path:
 
     if model is None:
         model = DocumentVLM(config["model"])
+    expected_model_id = str(config["model"]["model_id"])
+    if model.model_id != expected_model_id:
+        raise ValueError(
+            f"Loaded model {model.model_id!r} does not match config model {expected_model_id!r}"
+        )
     for example in tqdm(examples, desc="Document VLM inference"):
         if example.sample_id in completed_ids:
             continue
@@ -49,7 +54,8 @@ def run(config_path: str | Path, model: DocumentVLM | None = None) -> Path:
                 "expected_behavior": example.expected_behavior,
                 "prediction": prediction,
                 **stats,
-                "model_id": config["model"]["model_id"],
+                "model_id": expected_model_id,
+                "model_revision": model.model_revision,
             },
         )
     return output_path

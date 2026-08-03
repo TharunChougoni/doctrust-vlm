@@ -4,15 +4,15 @@ Both notebooks orchestrate the same tested modules under `src/doctrust/`; they a
 
 ## Recommended: `doctrust_colab.ipynb`
 
-Use this for the main 2.2B experiment:
+Use this for the main two-model comparison:
 
 - Colab T4-class GPU;
-- `HuggingFaceTB/SmolVLM-Instruct` in FP16;
-- 10 deterministic unique DocVQA document images;
-- OCR-derived evidence boxes with a mandatory visual-audit gate;
-- five variants per source;
-- all-sample and clean-correct-conditional metrics;
-- downloadable reproducibility ZIP.
+- `HuggingFaceTB/SmolVLM-Instruct` 2.2B and `Qwen/Qwen2.5-VL-3B-Instruct`, sequentially in FP16;
+- 50 deterministic unique DocVQA document images;
+- OCR-derived evidence boxes with a mandatory paginated visual-audit gate;
+- five variants per source, producing 500 predictions total;
+- raw predictions plus all-sample and clean-correct-conditional metrics;
+- model revisions, GPU/package metadata and a downloadable reproducibility ZIP.
 
 The GitHub repository is public, so Colab can open and clone it without a token or secret.
 

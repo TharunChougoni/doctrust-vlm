@@ -16,8 +16,10 @@ data/raw/*
 !data/raw/.gitkeep
 data/generated/*
 !data/generated/.gitkeep
+data/generated_colab/*
 data/manifests/source.jsonl
 data/manifests/prepared.jsonl
+data/manifests/prepared_colab.jsonl
 results/*
 !results/.gitkeep
 *.safetensors

@@ -144,6 +144,566 @@
         0.533205,
         0.437704
       ]
+    },
+    {
+      "id": "docvqa-train_47",
+      "dataset_id": "train_47",
+      "row_index": 35,
+      "sha256": "f1d138ba6fbb66b97243bb0642b405602f0d498afdf9fe715d5471c9b79df7d1",
+      "matched_text": "January 24, 1994",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.25709,
+        0.249346,
+        0.41497,
+        0.275346
+      ]
+    },
+    {
+      "id": "docvqa-train_48",
+      "dataset_id": "train_48",
+      "row_index": 36,
+      "sha256": "f2e3cfa67ff444e27ac85a398675d2e6e3a6976abd7f6702ef4d0bfc27e4be1e",
+      "matched_text": "forty",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.445107,
+        0.125308,
+        0.498621,
+        0.151308
+      ]
+    },
+    {
+      "id": "docvqa-train_53",
+      "dataset_id": "train_53",
+      "row_index": 41,
+      "sha256": "93e48bbb2e83c8e7dbeeb4825d4a990bef213a36dc2c1b7a748e9da2e92b367a",
+      "matched_text": "327391",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.696118,
+        0.072338,
+        0.784471,
+        0.098338
+      ]
+    },
+    {
+      "id": "docvqa-train_61",
+      "dataset_id": "train_61",
+      "row_index": 46,
+      "sha256": "83fb69c5b6bff2a550490cef1106a5acc4357631f6b7f65ccffe865892e9c594",
+      "matched_text": "November 27, 1990",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.554242,
+        0.179505,
+        0.772012,
+        0.205505
+      ]
+    },
+    {
+      "id": "docvqa-train_62",
+      "dataset_id": "train_62",
+      "row_index": 47,
+      "sha256": "5fcbe396b594d2d6e23e2881a0a7e5f976d79bfb16a9046dd501c9add8812ce6",
+      "matched_text": "cork-on-white tipping",
+      "match_score": 0.952380954648526,
+      "evidence_box": [
+        0.124474,
+        0.084361,
+        0.346804,
+        0.110361
+      ]
+    },
+    {
+      "id": "docvqa-train_67",
+      "dataset_id": "train_67",
+      "row_index": 52,
+      "sha256": "cbc956481472eaa45e5a0b304609b860fc0182d8ddc8b81cb4847831d53ed887",
+      "matched_text": "J. D. Phillips",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.255127,
+        0.258257,
+        0.380861,
+        0.284257
+      ]
+    },
+    {
+      "id": "docvqa-train_70",
+      "dataset_id": "train_70",
+      "row_index": 54,
+      "sha256": "4bc8b9d9a1d90e59a59295fed66d1447fe1bdc84aa7d1d83e2cb92102d3547eb",
+      "matched_text": "B&W",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.224547,
+        0.244222,
+        0.289604,
+        0.270222
+      ]
+    },
+    {
+      "id": "docvqa-train_74",
+      "dataset_id": "train_74",
+      "row_index": 57,
+      "sha256": "c59d46f0c20c6b56b6c5d9a5eba8221ed938da0dba959b57323109efecc9bd3d",
+      "matched_text": "TAR/NICOTINE DELIVERIES",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.261871,
+        0.397293,
+        0.521863,
+        0.423293
+      ]
+    },
+    {
+      "id": "docvqa-train_77",
+      "dataset_id": "train_77",
+      "row_index": 59,
+      "sha256": "a308a3d663a73e4100c3ef74ddd66de47610b9f06a05fba30e50e35101108994",
+      "matched_text": "584100575",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.645125,
+        0.851762,
+        0.80925,
+        0.877762
+      ]
+    },
+    {
+      "id": "docvqa-train_79",
+      "dataset_id": "train_79",
+      "row_index": 61,
+      "sha256": "ad7a1d4ccc8a963ec1afb911236816612864517ba6b04a57e64f43f25e9b8eaa",
+      "matched_text": "KOOL ULTRA KS / 100",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.24587,
+        0.087936,
+        0.797031,
+        0.113936
+      ]
+    },
+    {
+      "id": "docvqa-train_83",
+      "dataset_id": "train_83",
+      "row_index": 65,
+      "sha256": "52a9954fde0ce4e4205b8e289bfac990a3b31df28849f2cade10b17369715cdc",
+      "matched_text": "Reynolds Building",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.679352,
+        0.184327,
+        0.869111,
+        0.210327
+      ]
+    },
+    {
+      "id": "docvqa-train_86",
+      "dataset_id": "train_86",
+      "row_index": 68,
+      "sha256": "b42d7893c4ee1f0eecf48d0cad444e13e74aa1ba2ea48590d7fef69e50e8470e",
+      "matched_text": "June 19, 1990",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.640936,
+        0.219517,
+        0.757409,
+        0.245517
+      ]
+    },
+    {
+      "id": "docvqa-train_90",
+      "dataset_id": "train_90",
+      "row_index": 71,
+      "sha256": "811624443a2ebdf18247ee60f8cd847a38103153c0be102fd95263bde1dfa618",
+      "matched_text": "Over 300",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.187251,
+        0.250081,
+        0.332538,
+        0.276081
+      ]
+    },
+    {
+      "id": "docvqa-train_94",
+      "dataset_id": "train_94",
+      "row_index": 74,
+      "sha256": "9c45bfe725e002d7716c92e0b761b914ed01d0feceba454ff8233fb6208ac6ac",
+      "matched_text": "1993",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.205468,
+        0.809618,
+        0.283088,
+        0.835618
+      ]
+    },
+    {
+      "id": "docvqa-train_97",
+      "dataset_id": "train_97",
+      "row_index": 76,
+      "sha256": "0de8cff07245563fa5d22bf7ac88470702783e3acdb7d730f8f3e8afb7114675",
+      "matched_text": "12621",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.738903,
+        0.240182,
+        0.796791,
+        0.266182
+      ]
+    },
+    {
+      "id": "docvqa-train_99",
+      "dataset_id": "train_99",
+      "row_index": 77,
+      "sha256": "0fdb16f635b0c834982e8f9266b51df9a28acdf43286ecc9d6952c2081339915",
+      "matched_text": "May 29, 1990",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.653782,
+        0.120303,
+        0.776464,
+        0.146303
+      ]
+    },
+    {
+      "id": "docvqa-train_104",
+      "dataset_id": "train_104",
+      "row_index": 82,
+      "sha256": "f0fec681fdbb20672327da5974d5d275163f282223d35ab0d265c1a81ca697b6",
+      "matched_text": "79.2%",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.608042,
+        0.376303,
+        0.672926,
+        0.402303
+      ]
+    },
+    {
+      "id": "docvqa-train_110",
+      "dataset_id": "train_110",
+      "row_index": 85,
+      "sha256": "1d366f2580e232cebd06d823afde18feb9b5fa5e8d6613f2fe38371da716b421",
+      "matched_text": "April 1995",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.207919,
+        0.826452,
+        0.332099,
+        0.852452
+      ]
+    },
+    {
+      "id": "docvqa-train_113",
+      "dataset_id": "train_113",
+      "row_index": 87,
+      "sha256": "61a3be54e74e3ea43f98d82e0a369c3c45196c4e479f7247870e63984e23d872",
+      "matched_text": "Wayne Sanders, Macon Q.A.",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.106437,
+        0.597381,
+        0.366568,
+        0.623381
+      ]
+    },
+    {
+      "id": "docvqa-train_114",
+      "dataset_id": "train_114",
+      "row_index": 88,
+      "sha256": "a6d75ce03d19fbf76c3dc66d4acf77c3a5c482baa7721163ae9a2d93b00b7ee9",
+      "matched_text": "-0.68%",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.574819,
+        0.421472,
+        0.701403,
+        0.447472
+      ]
+    },
+    {
+      "id": "docvqa-train_120",
+      "dataset_id": "train_120",
+      "row_index": 94,
+      "sha256": "900e6b6717024d79fd3a9a7c89777b26770ee92b7d33907f467a23d64d11d483",
+      "matched_text": "stylish tins with graphics",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.452993,
+        0.197022,
+        0.675849,
+        0.223022
+      ]
+    },
+    {
+      "id": "docvqa-train_121",
+      "dataset_id": "train_121",
+      "row_index": 95,
+      "sha256": "ab609ab9f5fca26aca0c1591f026cd0b61d65d06a981201f88d2b2ef6b56b272",
+      "matched_text": "September 20, 1985",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.474332,
+        0.162581,
+        0.667011,
+        0.188581
+      ]
+    },
+    {
+      "id": "docvqa-train_126",
+      "dataset_id": "train_126",
+      "row_index": 100,
+      "sha256": "a1abce261381368f8655c7723316f18572eae0843c66886f1b2b3a572be081d2",
+      "matched_text": "Shasta",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.391882,
+        0.060677,
+        0.610481,
+        0.086677
+      ]
+    },
+    {
+      "id": "docvqa-train_130",
+      "dataset_id": "train_130",
+      "row_index": 103,
+      "sha256": "5bc6e002b58f40f0c1841afee4afe08421a6885bc519ed7f7d6ee0b632b3b9c2",
+      "matched_text": "10/19/2016",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.075577,
+        0.03641,
+        0.146515,
+        0.06241
+      ]
+    },
+    {
+      "id": "docvqa-train_132",
+      "dataset_id": "train_132",
+      "row_index": 105,
+      "sha256": "626db1b749fa9851a7e40bb8faa06fb0d210fb43f524512ab6d57bfc431f174b",
+      "matched_text": "001-02217",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.530098,
+        0.254411,
+        0.614025,
+        0.280411
+      ]
+    },
+    {
+      "id": "docvqa-train_136",
+      "dataset_id": "train_136",
+      "row_index": 109,
+      "sha256": "7583033a54de104ab0657997761330e32443a945579f22b271958a1df6cedb02",
+      "matched_text": "1772",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.187433,
+        0.482673,
+        0.255817,
+        0.508673
+      ]
+    },
+    {
+      "id": "docvqa-train_144",
+      "dataset_id": "train_144",
+      "row_index": 114,
+      "sha256": "f7574a5afac53c34fb50ba1dfc2443bf1be0d0503a96e76fe9ba21adc031166b",
+      "matched_text": "1-800-438-2653",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.548971,
+        0.536567,
+        0.751298,
+        0.562567
+      ]
+    },
+    {
+      "id": "docvqa-train_146",
+      "dataset_id": "train_146",
+      "row_index": 116,
+      "sha256": "aace1a19f9ca7964ec8dae43877fb825959822b491130777ca8ff3caeb780e82",
+      "matched_text": "7,919",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.700064,
+        0.312963,
+        0.740195,
+        0.338963
+      ]
+    },
+    {
+      "id": "docvqa-train_150",
+      "dataset_id": "train_150",
+      "row_index": 120,
+      "sha256": "6bfd9c2580e9de14b960f9a40d9893ad45c9b939de08d2908d6dde094a09672e",
+      "matched_text": "Mr. W. Thomas",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.160732,
+        0.280616,
+        0.302395,
+        0.306616
+      ]
+    },
+    {
+      "id": "docvqa-train_154",
+      "dataset_id": "train_154",
+      "row_index": 123,
+      "sha256": "9d0f97d0f60ad9dda56cc7be273dfcfea46021b3d4811efe27dd6efc2dd3f28e",
+      "matched_text": "Ms. Bonnie Liebman",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.130073,
+        0.320915,
+        0.328212,
+        0.346915
+      ]
+    },
+    {
+      "id": "docvqa-train_159",
+      "dataset_id": "train_159",
+      "row_index": 127,
+      "sha256": "dcdb9b038c4c0dcd40e076b98e5dadf4d17b9c792f9482a933e4c09b5c63286d",
+      "matched_text": "July 17 , 1978",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.630235,
+        0.746081,
+        0.769176,
+        0.772081
+      ]
+    },
+    {
+      "id": "docvqa-train_161",
+      "dataset_id": "train_161",
+      "row_index": 129,
+      "sha256": "680134a81de322a0f3d343c5e5027910d74893cce2c2bdee45c86cc250936323",
+      "matched_text": "1200-1600 milligrams",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.269964,
+        0.875983,
+        0.519721,
+        0.901983
+      ]
+    },
+    {
+      "id": "docvqa-train_166",
+      "dataset_id": "train_166",
+      "row_index": 130,
+      "sha256": "cbcedcdd37605a36a6ce9717d0a4b8ef97a1dbe7e86d25b87864630bcff9de11",
+      "matched_text": "JUNE 9, 1978",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.427169,
+        0.647394,
+        0.561582,
+        0.673394
+      ]
+    },
+    {
+      "id": "docvqa-train_167",
+      "dataset_id": "train_167",
+      "row_index": 131,
+      "sha256": "89dec58bdda1d0813a4a24fe0101a61a107ad0eab0723fb2fe3c00adbbaead38",
+      "matched_text": "Latin America",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.599647,
+        0.10965,
+        0.723882,
+        0.13565
+      ]
+    },
+    {
+      "id": "docvqa-train_170",
+      "dataset_id": "train_170",
+      "row_index": 134,
+      "sha256": "9d9366167d0b2e9b86ba03b45e4e512c8b874fea61232952444142f0275c09f3",
+      "matched_text": "Atlanta, Georgia 30301",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.500021,
+        0.497823,
+        0.776717,
+        0.523823
+      ]
+    },
+    {
+      "id": "docvqa-train_174",
+      "dataset_id": "train_174",
+      "row_index": 137,
+      "sha256": "267ad3fdadda09338c229d0e8c8afae5e3e376642dc9c8e4f3946c9f75bad475",
+      "matched_text": "10-12%",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.488736,
+        0.805818,
+        0.559335,
+        0.831818
+      ]
+    },
+    {
+      "id": "docvqa-train_175",
+      "dataset_id": "train_175",
+      "row_index": 138,
+      "sha256": "f3ba388bc560127806b1bd4f1873c216d196578026f52ad1ba8f12c7b0a568e0",
+      "matched_text": "11%",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.720664,
+        0.153082,
+        0.764916,
+        0.179082
+      ]
+    },
+    {
+      "id": "docvqa-train_178",
+      "dataset_id": "train_178",
+      "row_index": 141,
+      "sha256": "04cabb95f726edca21f8b510d1acf7edcb9c8865fdb4a9e24b0fb17e0ad9ad86",
+      "matched_text": "more than 400",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.435925,
+        0.462142,
+        0.59036,
+        0.488142
+      ]
+    },
+    {
+      "id": "docvqa-train_181",
+      "dataset_id": "train_181",
+      "row_index": 144,
+      "sha256": "4a1ecdff3d3ab005a0d622770f7e5b47a462c73e6ea37968b829f70d9e1ce51a",
+      "matched_text": "major corn refiners in the Midwest",
+      "match_score": 0.9705882361591696,
+      "evidence_box": [
+        0.037692,
+        0.113375,
+        0.466225,
+        0.147098
+      ]
+    },
+    {
+      "id": "docvqa-train_184",
+      "dataset_id": "train_184",
+      "row_index": 147,
+      "sha256": "77adbc5d6a0da51d2f40b891a14a9392ca8cd6f8828812b687b00787a3fad2e3",
+      "matched_text": "Michael Jacobson",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.175099,
+        0.20347,
+        0.389455,
+        0.22947
+      ]
     }
   ]
 }

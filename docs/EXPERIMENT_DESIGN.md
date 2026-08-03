@@ -41,7 +41,7 @@ Report two layers:
 
 The conditional layer is the primary robustness analysis. If the clean answer is wrong, stability under corruption is not successful answer preservation. Never silently discard clean failures: report the clean-correct count beside conditional metrics.
 
-After 100+ audited examples, add paired bootstrap confidence intervals, answer-flip rate and evidence-locality gap.
+For the 50-document two-model MVP, add deterministic paired bootstrap 95% intervals for Qwen-minus-Smol clean ANLS and evidence-abstention differences. Treat these as uncertainty for this selected subset—not DocVQA-wide confidence intervals. At 100+ audited examples, expand the paired analysis to answer-flip rate and evidence-locality gap.
 
 ## Error taxonomy
 

@@ -14,7 +14,7 @@ The first milestone is an evaluation study, not a chatbot and not a claim of a n
 
 ## Status
 
-A one-source local smoke run completed with SmolVLM-500M. It fit comfortably, but its clean answer was incorrect, so that run is retained only as a weak baseline—not a robustness result. The main workflow now uses 10 OCR-audited DocVQA examples and SmolVLM 2.2B on a Colab GPU. No multi-example result is claimed until the Colab artifact files are produced.
+A one-source local smoke run completed with SmolVLM-500M. It fit comfortably, but its clean answer was incorrect, so that run is retained only as a weak baseline—not a robustness result. The main Colab workflow now compares SmolVLM 2.2B and Qwen2.5-VL 3B on 50 manually audited source documents × five paired variants, producing 500 predictions. No comparison result is claimed until the exported artifact ZIP is produced.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TharunChougoni/doctrust-vlm/blob/main/notebooks/doctrust_colab.ipynb)
 
@@ -23,8 +23,9 @@ The repository is public, so the Colab notebook clones it directly without crede
 ## Models
 
 - Local baseline: [`HuggingFaceTB/SmolVLM-500M-Instruct`](https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct)
-- Colab experiment: [`HuggingFaceTB/SmolVLM-Instruct`](https://huggingface.co/HuggingFaceTB/SmolVLM-Instruct) (2.2B, FP16)
-- Deferred comparator: [`ibm-granite/granite-vision-3.2-2b`](https://huggingface.co/ibm-granite/granite-vision-3.2-2b)
+- Colab model 1: [`HuggingFaceTB/SmolVLM-Instruct`](https://huggingface.co/HuggingFaceTB/SmolVLM-Instruct) (2.2B, FP16)
+- Colab model 2: [`Qwen/Qwen2.5-VL-3B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct) (3B, FP16)
+- Deferred fallback: [`ibm-granite/granite-vision-3.2-2b`](https://huggingface.co/ibm-granite/granite-vision-3.2-2b)
 
 The 500M checkpoint's official card reports roughly 1.23 GB GPU RAM, while the 2.2B card reports a 5.02 GB minimum. A 6 GB laptop GPU has insufficient practical headroom once the display, CUDA context and document activations are included; the 2.2B FP16 run therefore targets a Colab T4-class GPU.
 
@@ -64,9 +65,9 @@ python -m pip install -r requirements.txt
 
 ## Run order
 
-### Recommended: Colab 2.2B + 10 examples
+### Recommended: Colab two-model comparison + 50 examples
 
-Open [`notebooks/doctrust_colab.ipynb`](notebooks/doctrust_colab.ipynb), choose a GPU runtime, and run it from top to bottom. It fetches 10 deterministic unique-image examples, displays every OCR-derived evidence box for manual approval, runs the paired variants, and exports a reproducibility ZIP.
+Open [`notebooks/doctrust_colab.ipynb`](notebooks/doctrust_colab.ipynb), choose a GPU runtime, and run it from top to bottom. It fetches 50 deterministic unique-image examples, paginates every OCR-derived evidence box for manual approval, runs five paired variants through both models one at a time, and exports a complete reproducibility ZIP.
 
 ### Local learning notebook
 
@@ -90,10 +91,10 @@ The equivalent commands are:
 # 1. Check environment; does not download a model
 python scripts/check_environment.py
 
-# 2. Fetch 10 unique DocVQA examples and derive OCR answer boxes
+# 2. Fetch 50 unique DocVQA examples and derive OCR answer boxes
 python scripts/fetch_docvqa_samples.py \
-  --count 10 \
-  --scan 150 \
+  --count 50 \
+  --scan 300 \
   --acknowledge-docvqa-terms
 # Visually audit every generated evidence box before continuing.
 
@@ -129,9 +130,9 @@ One JSON object per line:
 
 - Synthetic corruption is not the same as real deployment data.
 - Evidence boxes must be audited; weak OCR matching is not human ground truth.
-- A 20–50 item run is a proof of concept, not a statistically strong benchmark.
+- A 50-item, two-model run is a credible course/deadline proof of concept, not a statistically strong benchmark.
 - No fine-tuning is included in the MVP.
-- Qwen and PaddleOCR-VL are deferred until this pipeline is stable.
+- Qwen is a direct inference comparator; PaddleOCR-VL and Granite remain deferred.
 
 ## License
 

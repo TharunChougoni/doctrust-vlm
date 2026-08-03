@@ -55,15 +55,52 @@ class DocumentVLM:
             raise ValueError(f"Unsupported model architecture: {architecture}")
 
         processor_kwargs: dict[str, Any] = {}
+        if config.get("processor_use_fast") is not None:
+            processor_kwargs["use_fast"] = bool(config["processor_use_fast"])
         if config.get("processor_longest_edge") is not None:
             processor_kwargs["size"] = {"longest_edge": int(config["processor_longest_edge"])}
+        for pixel_key in ("min_pixels", "max_pixels"):
+            if config.get(pixel_key) is not None:
+                processor_kwargs[pixel_key] = int(config[pixel_key])
         self.processor = AutoProcessor.from_pretrained(self.model_id, **processor_kwargs)
         self.model = model_class.from_pretrained(self.model_id, **common_kwargs).eval()
+        self.model_revision = getattr(self.model.config, "_commit_hash", None)
 
     def answer(self, image_path: str | Path, question: str) -> str:
         """Generate a short answer for one image/question pair."""
         prompt = f"{self.config['prompt']}\n\nQuestion: {question}"
-        if self.model_id.startswith("HuggingFaceTB/SmolVLM"):
+        if self.model_id.startswith("Qwen/"):
+            try:
+                from importlib import import_module
+
+                process_vision_info = import_module("qwen_vl_utils").process_vision_info
+            except (ImportError, AttributeError) as error:
+                raise RuntimeError(
+                    "Qwen inference requires qwen-vl-utils; install requirements-colab.txt"
+                ) from error
+            conversation = [
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "image", "image": Path(image_path).resolve().as_uri()},
+                        {"type": "text", "text": prompt},
+                    ],
+                }
+            ]
+            rendered_prompt = self.processor.apply_chat_template(
+                conversation,
+                tokenize=False,
+                add_generation_prompt=True,
+            )
+            image_inputs, video_inputs = process_vision_info(conversation)
+            inputs = self.processor(
+                text=[rendered_prompt],
+                images=image_inputs,
+                videos=video_inputs,
+                padding=True,
+                return_tensors="pt",
+            ).to(self.model.device)
+        elif self.model_id.startswith("HuggingFaceTB/SmolVLM"):
             with Image.open(image_path) as opened:
                 image = opened.convert("RGB")
             conversation = [
