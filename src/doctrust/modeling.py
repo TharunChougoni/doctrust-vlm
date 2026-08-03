@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any
 
 import torch
+from PIL import Image
 from transformers import (
     AutoModelForImageTextToText,
     AutoModelForVision2Seq,
@@ -53,28 +54,53 @@ class DocumentVLM:
         if model_class is None:
             raise ValueError(f"Unsupported model architecture: {architecture}")
 
-        self.processor = AutoProcessor.from_pretrained(self.model_id)
+        processor_kwargs: dict[str, Any] = {}
+        if config.get("processor_longest_edge") is not None:
+            processor_kwargs["size"] = {"longest_edge": int(config["processor_longest_edge"])}
+        self.processor = AutoProcessor.from_pretrained(self.model_id, **processor_kwargs)
         self.model = model_class.from_pretrained(self.model_id, **common_kwargs).eval()
 
     def answer(self, image_path: str | Path, question: str) -> str:
         """Generate a short answer for one image/question pair."""
         prompt = f"{self.config['prompt']}\n\nQuestion: {question}"
-        conversation = [
-            {
-                "role": "user",
-                "content": [
-                    {"type": "image", "url": str(Path(image_path).resolve())},
-                    {"type": "text", "text": prompt},
-                ],
-            }
-        ]
-        inputs = self.processor.apply_chat_template(
-            conversation,
-            add_generation_prompt=True,
-            tokenize=True,
-            return_dict=True,
-            return_tensors="pt",
-        ).to(self.model.device)
+        if self.model_id.startswith("HuggingFaceTB/SmolVLM"):
+            with Image.open(image_path) as opened:
+                image = opened.convert("RGB")
+            conversation = [
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "image"},
+                        {"type": "text", "text": prompt},
+                    ],
+                }
+            ]
+            rendered_prompt = self.processor.apply_chat_template(
+                conversation,
+                add_generation_prompt=True,
+            )
+            inputs = self.processor(
+                text=rendered_prompt,
+                images=[image],
+                return_tensors="pt",
+            ).to(self.model.device)
+        else:
+            conversation = [
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "image", "url": str(Path(image_path).resolve())},
+                        {"type": "text", "text": prompt},
+                    ],
+                }
+            ]
+            inputs = self.processor.apply_chat_template(
+                conversation,
+                add_generation_prompt=True,
+                tokenize=True,
+                return_dict=True,
+                return_tensors="pt",
+            ).to(self.model.device)
 
         with torch.inference_mode():
             generated = self.model.generate(

@@ -1,9 +1,10 @@
-name: smolvlm2
-model_id: HuggingFaceTB/SmolVLM2-2.2B-Instruct
+name: smolvlm-500m
+model_id: HuggingFaceTB/SmolVLM-500M-Instruct
 architecture: image_text_to_text
-load_in_4bit: true
+load_in_4bit: false
 dtype: float16
+processor_longest_edge: 1024
 max_new_tokens: 64
 notes: >-
-  Optional efficiency comparator. The official card demonstrates bfloat16,
-  but a T4/RTX 3060 path should use float16 unless bfloat16 support is verified.
+  Deadline-safe local model. The official card reports about 1.23 GB GPU RAM
+  for one-image inference, so use FP16 rather than runtime quantization.

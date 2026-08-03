@@ -1,11 +1,12 @@
 seed: 17
 
 model:
-  name: granite
-  model_id: ibm-granite/granite-vision-3.2-2b
-  architecture: vision2seq
-  load_in_4bit: true
+  name: smolvlm-500m
+  model_id: HuggingFaceTB/SmolVLM-500M-Instruct
+  architecture: image_text_to_text
+  load_in_4bit: false
   dtype: float16
+  processor_longest_edge: 1024
   max_new_tokens: 64
   prompt: >-
     Answer the question using only visible evidence in the document.

@@ -18,10 +18,10 @@ The repository is scaffolded but **no model has been downloaded or executed and 
 
 ## First model
 
-- Primary: [`ibm-granite/granite-vision-3.2-2b`](https://huggingface.co/ibm-granite/granite-vision-3.2-2b)
-- Optional comparator: [`HuggingFaceTB/SmolVLM2-2.2B-Instruct`](https://huggingface.co/HuggingFaceTB/SmolVLM2-2.2B-Instruct)
+- MVP: [`HuggingFaceTB/SmolVLM-500M-Instruct`](https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct)
+- Optional later comparator: [`ibm-granite/granite-vision-3.2-2b`](https://huggingface.co/ibm-granite/granite-vision-3.2-2b)
 
-Both are configured for 4-bit, batch-one inference. Granite is document-focused; SmolVLM2 is the lower-cost comparison.
+The 500M SmolVLM checkpoint is the deadline-safe local path: its official card reports roughly 1.23 GB GPU RAM for one-image inference, so it runs in FP16 without runtime quantization. Granite remains document-focused but is deferred because its vision attention is incompatible with generic bitsandbytes 4-bit conversion in the current stack.
 
 ## Repository map
 
