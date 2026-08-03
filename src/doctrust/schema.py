@@ -14,7 +14,7 @@ class SourceExample:
     evidence_box: tuple[float, float, float, float]
 
     @classmethod
-    def from_dict(cls, item: dict[str, Any]) -> "SourceExample":
+    def from_dict(cls, item: dict[str, Any]) -> SourceExample:
         required = {"id", "image_path", "question", "answers", "evidence_box"}
         missing = required.difference(item)
         if missing:
@@ -59,7 +59,7 @@ class PreparedExample:
     expected_behavior: str
 
     @classmethod
-    def from_dict(cls, item: dict[str, Any]) -> "PreparedExample":
+    def from_dict(cls, item: dict[str, Any]) -> PreparedExample:
         required = {
             "id",
             "source_id",

@@ -1,0 +1,8 @@
+# Colab installs only; Colab already provides a CUDA-enabled PyTorch build.
+transformers>=4.57,<5
+accelerate>=1.11
+huggingface-hub>=0.28
+Pillow>=10.4
+numpy>=2.0
+PyYAML>=6.0
+tqdm>=4.67

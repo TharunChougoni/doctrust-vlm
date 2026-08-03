@@ -1,0 +1,49 @@
+seed: 17
+
+model:
+  name: smolvlm-2.2b
+  model_id: HuggingFaceTB/SmolVLM-Instruct
+  architecture: image_text_to_text
+  load_in_4bit: false
+  dtype: float16
+  processor_longest_edge: 1536
+  max_new_tokens: 64
+  prompt: >-
+    Answer the question using only visible evidence in the document.
+    Return only the short answer. If the answer evidence is absent,
+    covered, destroyed, or unreadable, return exactly UNANSWERABLE.
+
+runtime:
+  batch_size: 1
+  seed: 17
+
+data:
+  source_manifest: data/manifests/source.jsonl
+  prepared_manifest: data/manifests/prepared_colab.jsonl
+  generated_dir: data/generated_colab
+  max_long_edge: 1536
+
+variants:
+  - name: clean
+    expected_behavior: preserve
+  - name: jpeg_q35
+    expected_behavior: preserve
+    jpeg_quality: 35
+  - name: blur_1_5
+    expected_behavior: preserve
+    blur_radius: 1.5
+  - name: distractor_occlusion
+    expected_behavior: preserve
+    mode: distractor_occlusion
+    box_fraction: [0.18, 0.08]
+    fill: white
+  - name: evidence_occlusion
+    expected_behavior: abstain
+    mode: evidence_occlusion
+    expansion: 0.01
+    fill: white
+
+output:
+  predictions: results/colab_predictions.jsonl
+  metrics: results/colab_metrics.json
+  error_analysis: results/colab_error_analysis.jsonl

@@ -1,4 +1,4 @@
-# Install inside ../hf.venv. These versions target Granite Vision and SmolVLM2.
+# Core local dependencies for SmolVLM and optional model comparisons.
 torch>=2.6
 torchvision>=0.21
 transformers>=4.49,<5
@@ -8,5 +8,5 @@ huggingface-hub>=0.28
 Pillow>=10.4
 numpy>=2.0
 PyYAML>=6.0
-pynvml>=12.0
+nvidia-ml-py>=12.0
 tqdm>=4.67

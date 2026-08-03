@@ -14,14 +14,19 @@ The first milestone is an evaluation study, not a chatbot and not a claim of a n
 
 ## Status
 
-The repository is scaffolded but **no model has been downloaded or executed and no experiment results exist yet**. Do not describe it as a completed project until `results/` contains reproducible outputs.
+A one-source local smoke run completed with SmolVLM-500M. It fit comfortably, but its clean answer was incorrect, so that run is retained only as a weak baseline—not a robustness result. The main workflow now uses 10 OCR-audited DocVQA examples and SmolVLM 2.2B on a Colab GPU. No multi-example result is claimed until the Colab artifact files are produced.
 
-## First model
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TharunChougoni/doctrust-vlm/blob/main/notebooks/doctrust_colab.ipynb)
 
-- MVP: [`HuggingFaceTB/SmolVLM-500M-Instruct`](https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct)
-- Optional later comparator: [`ibm-granite/granite-vision-3.2-2b`](https://huggingface.co/ibm-granite/granite-vision-3.2-2b)
+The repository is private. Authorize private GitHub repositories in Colab to open the notebook, then use the notebook's read-only `GITHUB_TOKEN` secret workflow to clone the code.
 
-The 500M SmolVLM checkpoint is the deadline-safe local path: its official card reports roughly 1.23 GB GPU RAM for one-image inference, so it runs in FP16 without runtime quantization. Granite remains document-focused but is deferred because its vision attention is incompatible with generic bitsandbytes 4-bit conversion in the current stack.
+## Models
+
+- Local baseline: [`HuggingFaceTB/SmolVLM-500M-Instruct`](https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct)
+- Colab experiment: [`HuggingFaceTB/SmolVLM-Instruct`](https://huggingface.co/HuggingFaceTB/SmolVLM-Instruct) (2.2B, FP16)
+- Deferred comparator: [`ibm-granite/granite-vision-3.2-2b`](https://huggingface.co/ibm-granite/granite-vision-3.2-2b)
+
+The 500M checkpoint's official card reports roughly 1.23 GB GPU RAM, while the 2.2B card reports a 5.02 GB minimum. A 6 GB laptop GPU has insufficient practical headroom once the display, CUDA context and document activations are included; the 2.2B FP16 run therefore targets a Colab T4-class GPU.
 
 ## Repository map
 
@@ -59,9 +64,13 @@ python -m pip install -r requirements.txt
 
 ## Run order
 
-### Recommended: one main notebook
+### Recommended: Colab 2.2B + 10 examples
 
-Open [`notebooks/doctrust_mvp.ipynb`](notebooks/doctrust_mvp.ipynb) and run it from top to bottom. It explains each stage, previews the evidence box and transformed images, clearly marks the GPU/model-download boundary, performs inference, and computes metrics.
+Open [`notebooks/doctrust_colab.ipynb`](notebooks/doctrust_colab.ipynb), choose a GPU runtime, and run it from top to bottom. It fetches 10 deterministic unique-image examples, displays every OCR-derived evidence box for manual approval, runs the paired variants, and exports a reproducibility ZIP.
+
+### Local learning notebook
+
+Open [`notebooks/doctrust_mvp.ipynb`](notebooks/doctrust_mvp.ipynb) for the one-source SmolVLM-500M workflow. It is useful for learning and pipeline debugging, not for the final robustness claim.
 
 In VS Code, select this existing kernel:
 
@@ -81,8 +90,12 @@ The equivalent commands are:
 # 1. Check environment; does not download a model
 python scripts/check_environment.py
 
-# 2. Copy and edit the example manifest
-cp data/manifests/example.jsonl data/manifests/source.jsonl
+# 2. Fetch 10 unique DocVQA examples and derive OCR answer boxes
+python scripts/fetch_docvqa_samples.py \
+  --count 10 \
+  --scan 150 \
+  --acknowledge-docvqa-terms
+# Visually audit every generated evidence box before continuing.
 
 # 3. Generate clean/corrupted image variants
 PYTHONPATH=src python -m doctrust.prepare --config configs/mvp.yaml

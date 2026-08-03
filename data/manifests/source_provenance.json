@@ -1,0 +1,149 @@
+{
+  "dataset": "nielsr/docvqa_1200_examples",
+  "official_terms": "https://www.docvqa.org/datasets",
+  "split": "train",
+  "selection": "unique image hash, OCR answer match >= 0.95",
+  "warning": "OCR-derived boxes require visual audit before inference.",
+  "samples": [
+    {
+      "id": "docvqa-train_3",
+      "dataset_id": "train_3",
+      "row_index": 1,
+      "sha256": "961320f8ce3f9600fe279896723b7eaeace2e06172ed9222ecdd9dc0b8600595",
+      "matched_text": "T.F. Riehl",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.231103,
+        0.216087,
+        0.319332,
+        0.242087
+      ]
+    },
+    {
+      "id": "docvqa-train_7",
+      "dataset_id": "train_7",
+      "row_index": 5,
+      "sha256": "8971ac50bf2595f9d007e45246bbad094604cf870530fec49a6a40e02e492abf",
+      "matched_text": "June 11, 1990",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.61744,
+        0.177855,
+        0.737191,
+        0.203855
+      ]
+    },
+    {
+      "id": "docvqa-train_12",
+      "dataset_id": "train_12",
+      "row_index": 9,
+      "sha256": "309e2c59621d7cf31684ab5b943fa87d36ab8034fcd4b2f343256efcddbacfa1",
+      "matched_text": "April 27, 1990",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.653196,
+        0.145553,
+        0.801669,
+        0.171553
+      ]
+    },
+    {
+      "id": "docvqa-train_15",
+      "dataset_id": "train_15",
+      "row_index": 12,
+      "sha256": "61cf62b100cd79729d2a7d349191d039e211127871e5b60c6d556c18ec2bec82",
+      "matched_text": "100",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.706218,
+        0.373222,
+        0.763112,
+        0.399222
+      ]
+    },
+    {
+      "id": "docvqa-train_19",
+      "dataset_id": "train_19",
+      "row_index": 15,
+      "sha256": "14544951906f1daf190548f420bed8a496693cf82042e6170b837ac6aea55e0a",
+      "matched_text": "80mm and 83mm",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.310288,
+        0.361886,
+        0.45759,
+        0.387886
+      ]
+    },
+    {
+      "id": "docvqa-train_22",
+      "dataset_id": "train_22",
+      "row_index": 18,
+      "sha256": "5671c569e6c7d797cdd838f8b51b7bb5dbcb43d6930fa1e896c888b3525b696c",
+      "matched_text": "6/7/90",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.56996,
+        0.305699,
+        0.643404,
+        0.331699
+      ]
+    },
+    {
+      "id": "docvqa-train_26",
+      "dataset_id": "train_26",
+      "row_index": 21,
+      "sha256": "2507f34ce18500e4c1736d435b6cff02ebae3327184838dbc8df5b50cfcb6300",
+      "matched_text": "At least two",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.377144,
+        0.534336,
+        0.495516,
+        0.560336
+      ]
+    },
+    {
+      "id": "docvqa-train_30",
+      "dataset_id": "train_30",
+      "row_index": 24,
+      "sha256": "d3a4eaf3044b44b77a1f43a6696c911622acae0fc5849b7d106634041bb20835",
+      "matched_text": "POLAR VOLATILE ORGANICS",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.333735,
+        0.241777,
+        0.620544,
+        0.267777
+      ]
+    },
+    {
+      "id": "docvqa-train_35",
+      "dataset_id": "train_35",
+      "row_index": 27,
+      "sha256": "5a0dcfea51f7112a8a373b32a5c1a4ef79fc0ba7ef804480121ee28a21776b08",
+      "matched_text": "University of Maine",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.137955,
+        0.085271,
+        0.306945,
+        0.111271
+      ]
+    },
+    {
+      "id": "docvqa-train_37",
+      "dataset_id": "train_37",
+      "row_index": 29,
+      "sha256": "f66e2a8b9b35bfe9cf824f03b20b6ee3c35e475ce606c099338871d9cbe53ee1",
+      "matched_text": "low smoke cigarette",
+      "match_score": 1.0,
+      "evidence_box": [
+        0.365388,
+        0.411704,
+        0.533205,
+        0.437704
+      ]
+    }
+  ]
+}

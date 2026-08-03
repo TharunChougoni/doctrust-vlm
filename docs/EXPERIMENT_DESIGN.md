@@ -34,10 +34,12 @@ Do not split variants from one source across train/development/evaluation sets.
 
 ## MVP metrics
 
-- mean ANLS by answer-preserving variant;
-- abstention rate after evidence removal;
-- false-answer rate after evidence removal;
-- latency and peak allocated VRAM by example.
+Report two layers:
+
+1. **All examples:** clean mean ANLS, variant mean ANLS, abstention/false-answer rates, latency and peak allocated VRAM.
+2. **Clean-correct subset:** repeat corruption metrics only for sources whose clean ANLS is at least 0.5.
+
+The conditional layer is the primary robustness analysis. If the clean answer is wrong, stability under corruption is not successful answer preservation. Never silently discard clean failures: report the clean-correct count beside conditional metrics.
 
 After 100+ audited examples, add paired bootstrap confidence intervals, answer-flip rate and evidence-locality gap.
 
