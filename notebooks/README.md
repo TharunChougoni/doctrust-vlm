@@ -4,6 +4,8 @@ Use `doctrust_mvp.ipynb` for the first experiment. It runs the same modular code
 
 ## VS Code
 
+A local DocVQA-derived smoke-test item is already configured. Its answer is `T.F. Riehl`; the notebook first visualizes the audited answer box before generating variants.
+
 1. Open `/home/tharun/Projects/hf-course/doctrust-vlm`.
 2. Open `notebooks/doctrust_mvp.ipynb`.
 3. Select `/home/tharun/Projects/hf-course/hf.venv/bin/python` as the kernel.

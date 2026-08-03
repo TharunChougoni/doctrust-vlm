@@ -1,0 +1,25 @@
+{
+  "dataset": "nielsr/docvqa_1200_examples",
+  "underlying_dataset": "DocVQA Task 1",
+  "config": "default",
+  "split": "train",
+  "row_index": 1,
+  "dataset_id": "train_3",
+  "question": "Who is in cc in this letter?",
+  "answers": [
+    "T.F. Riehl"
+  ],
+  "matched_text": "T.F. Riehl",
+  "image_width": 1606,
+  "image_height": 2104,
+  "image_sha256": "961320f8ce3f9600fe279896723b7eaeace2e06172ed9222ecdd9dc0b8600595",
+  "evidence_box": [
+    0.235,
+    0.22,
+    0.315,
+    0.245
+  ],
+  "source_page": "https://huggingface.co/datasets/nielsr/docvqa_1200_examples",
+  "official_terms": "https://www.docvqa.org/datasets",
+  "note": "Local smoke-test copy only. The image is gitignored and is not redistributed from this repository; check original DocVQA terms before further use."
+}
