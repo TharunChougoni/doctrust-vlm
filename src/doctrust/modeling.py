@@ -25,15 +25,20 @@ class DocumentVLM:
 
         quantization_config = None
         if bool(config.get("load_in_4bit", True)):
+            # Granite's SigLIP tower contains attention output projections that
+            # access raw weights directly. Quantizing those weights packs them
+            # as uint8 and causes `Half and Byte` matrix multiplication errors.
+            # Keep the vision path in FP16 and quantize only the language model.
             quantization_config = BitsAndBytesConfig(
                 load_in_4bit=True,
                 bnb_4bit_quant_type="nf4",
                 bnb_4bit_compute_dtype=compute_dtype,
                 bnb_4bit_use_double_quant=True,
+                llm_int8_skip_modules=["vision_tower", "multi_modal_projector"],
             )
 
         common_kwargs: dict[str, Any] = {
-            "torch_dtype": compute_dtype,
+            "dtype": compute_dtype,
             "device_map": "auto",
             "low_cpu_mem_usage": True,
         }

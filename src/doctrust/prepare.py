@@ -17,6 +17,7 @@ def prepare(config_path: str | Path) -> Path:
     source_manifest = Path(config["data"]["source_manifest"])
     prepared_manifest = Path(config["data"]["prepared_manifest"])
     generated_dir = Path(config["data"]["generated_dir"])
+    max_long_edge = int(config["data"].get("max_long_edge", 0))
     generated_dir.mkdir(parents=True, exist_ok=True)
 
     source_rows = read_jsonl(source_manifest)
@@ -36,6 +37,13 @@ def prepare(config_path: str | Path) -> Path:
         for variant in config["variants"]:
             variant_name = str(variant["name"])
             transformed = apply_variant(source_image, example.evidence_box, variant)
+            if max_long_edge > 0 and max(transformed.size) > max_long_edge:
+                scale = max_long_edge / max(transformed.size)
+                resized_size = (
+                    max(1, round(transformed.width * scale)),
+                    max(1, round(transformed.height * scale)),
+                )
+                transformed = transformed.resize(resized_size, Image.Resampling.LANCZOS)
             output_path = generated_dir / f"{example.sample_id}__{variant_name}.png"
             transformed.save(output_path, format="PNG")
             prepared_rows.append(

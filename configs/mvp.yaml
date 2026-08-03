@@ -16,6 +16,7 @@ data:
   source_manifest: data/manifests/source.jsonl
   prepared_manifest: data/manifests/prepared.jsonl
   generated_dir: data/generated
+  max_long_edge: 1024
 
 variants:
   - name: clean
