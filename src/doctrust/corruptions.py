@@ -59,6 +59,10 @@ def apply_variant(image: Image.Image, box: Box, spec: dict) -> Image.Image:
     """Dispatch one declarative corruption specification."""
     transform = spec.get("transform")
     if transform is None:
+        if spec.get("name") != "clean":
+            raise ValueError(
+                f"Non-clean variant {spec.get('name')!r} is missing a supported transform"
+            )
         return image.convert("RGB").copy()
     if transform == "jpeg":
         return jpeg_compression(image, quality=int(spec["quality"]))

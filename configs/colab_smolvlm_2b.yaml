@@ -28,20 +28,20 @@ variants:
     expected_behavior: preserve
   - name: jpeg_q35
     expected_behavior: preserve
-    jpeg_quality: 35
+    transform: jpeg
+    quality: 35
   - name: blur_1_5
     expected_behavior: preserve
-    blur_radius: 1.5
+    transform: gaussian_blur
+    radius: 1.5
   - name: distractor_occlusion
     expected_behavior: preserve
-    mode: distractor_occlusion
-    box_fraction: [0.18, 0.08]
-    fill: white
+    transform: distractor_occlusion
+    fill: 128
   - name: evidence_occlusion
     expected_behavior: abstain
-    mode: evidence_occlusion
-    expansion: 0.01
-    fill: white
+    transform: evidence_occlusion
+    fill: 128
 
 output:
   predictions: results/colab_predictions.jsonl
