@@ -1,0 +1,30 @@
+[
+  {
+    "model": "SmolVLM-2.2B",
+    "predictions": 250,
+    "clean_correct": 38,
+    "clean_mean_anls": 0.7213205389811427,
+    "jpeg_conditional_anls": 0.9229286870250493,
+    "blur_conditional_anls": 0.9270764667614717,
+    "distractor_conditional_anls": 0.9227901828699246,
+    "evidence_abstention_rate": 0.0,
+    "evidence_conditional_abstention_rate": 0.0,
+    "evidence_conditional_false_answer_rate": 1.0,
+    "mean_latency_seconds": 1.4876774167440034,
+    "peak_vram_mb": 9050.68408203125
+  },
+  {
+    "model": "Qwen2.5-VL-3B",
+    "predictions": 250,
+    "clean_correct": 45,
+    "clean_mean_anls": 0.8969187675070028,
+    "jpeg_conditional_anls": 0.9965764083411143,
+    "blur_conditional_anls": 0.9986928104575163,
+    "distractor_conditional_anls": 0.9965764083411143,
+    "evidence_abstention_rate": 0.14,
+    "evidence_conditional_abstention_rate": 0.13333333333333333,
+    "evidence_conditional_false_answer_rate": 0.8666666666666667,
+    "mean_latency_seconds": 1.9975114100359823,
+    "peak_vram_mb": 13041.3125
+  }
+]

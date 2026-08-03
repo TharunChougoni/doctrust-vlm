@@ -1,0 +1,29 @@
+{
+  "started_utc": "2026-08-03T18:14:58.168480+00:00",
+  "git_commit": "17cf5b3cb08e32bc5fa95b35da147ee26d5ba278",
+  "python": "3.12.13",
+  "gpu": "Tesla T4",
+  "gpu_total_vram_gb": 14.56317138671875,
+  "cuda": "12.8",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "transformers": "4.57.6",
+    "accelerate": "1.14.0",
+    "huggingface-hub": "0.36.2",
+    "qwen-vl-utils": "0.0.14"
+  },
+  "seed": 17,
+  "source_count": 50,
+  "variants_per_source": 5,
+  "models": {
+    "HuggingFaceTB/SmolVLM-Instruct": {
+      "revision": "81cd9a775a4d644f2faf4e7becff4559b46b14c7",
+      "config": "configs/colab_smolvlm_2b.yaml"
+    },
+    "Qwen/Qwen2.5-VL-3B-Instruct": {
+      "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+      "config": "configs/colab_qwen2_5_vl_3b.yaml"
+    }
+  },
+  "finished_utc": "2026-08-03T18:37:23.571858+00:00"
+}

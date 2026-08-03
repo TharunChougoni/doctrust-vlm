@@ -14,7 +14,7 @@ The first milestone is an evaluation study, not a chatbot and not a claim of a n
 
 ## Status
 
-A one-source local smoke run completed with SmolVLM-500M. It fit comfortably, but its clean answer was incorrect, so that run is retained only as a weak baseline—not a robustness result. The main Colab workflow now compares SmolVLM 2.2B and Qwen2.5-VL 3B on 50 manually audited source documents × five paired variants, producing 500 predictions. No comparison result is claimed until the exported artifact ZIP is produced.
+The completed Colab run compared SmolVLM 2.2B and Qwen2.5-VL 3B on 50 manually audited source documents × five paired variants (500 predictions). Qwen achieved clean mean ANLS 0.8969 versus 0.7213 for SmolVLM, a paired difference of +0.1756 with a 95% bootstrap interval of [+0.0485, +0.3079]. Full raw predictions, metrics, metadata, and limitations are published in [`reports/final-50/RESULTS.md`](reports/final-50/RESULTS.md).
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TharunChougoni/doctrust-vlm/blob/main/notebooks/doctrust_colab.ipynb)
 

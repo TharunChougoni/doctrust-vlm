@@ -1,0 +1,112 @@
+{
+  "prediction_count": 250,
+  "source_count": 50,
+  "clean_correct_threshold": 0.5,
+  "clean_correct_source_count": 38,
+  "clean_correct_source_ids": [
+    "docvqa-train_104",
+    "docvqa-train_110",
+    "docvqa-train_113",
+    "docvqa-train_114",
+    "docvqa-train_12",
+    "docvqa-train_121",
+    "docvqa-train_126",
+    "docvqa-train_130",
+    "docvqa-train_132",
+    "docvqa-train_136",
+    "docvqa-train_144",
+    "docvqa-train_15",
+    "docvqa-train_150",
+    "docvqa-train_154",
+    "docvqa-train_159",
+    "docvqa-train_166",
+    "docvqa-train_167",
+    "docvqa-train_174",
+    "docvqa-train_178",
+    "docvqa-train_19",
+    "docvqa-train_22",
+    "docvqa-train_3",
+    "docvqa-train_30",
+    "docvqa-train_47",
+    "docvqa-train_53",
+    "docvqa-train_61",
+    "docvqa-train_62",
+    "docvqa-train_67",
+    "docvqa-train_7",
+    "docvqa-train_70",
+    "docvqa-train_74",
+    "docvqa-train_77",
+    "docvqa-train_79",
+    "docvqa-train_83",
+    "docvqa-train_86",
+    "docvqa-train_90",
+    "docvqa-train_94",
+    "docvqa-train_99"
+  ],
+  "model_ids": [
+    "HuggingFaceTB/SmolVLM-Instruct"
+  ],
+  "variants": {
+    "blur_1_5": {
+      "count": 50,
+      "mean_anls": 0.7506957617975419,
+      "abstention_rate": null,
+      "false_answer_rate": null,
+      "mean_latency_seconds": 1.4815726425999765,
+      "clean_correct_count": 38,
+      "conditional_mean_anls": 0.9270764667614717,
+      "conditional_abstention_rate": null,
+      "conditional_false_answer_rate": null
+    },
+    "clean": {
+      "count": 50,
+      "mean_anls": 0.7213205389811427,
+      "abstention_rate": null,
+      "false_answer_rate": null,
+      "mean_latency_seconds": 1.5019523038400349,
+      "clean_correct_count": 38,
+      "conditional_mean_anls": 0.9491059723436088,
+      "conditional_abstention_rate": null,
+      "conditional_false_answer_rate": null
+    },
+    "distractor_occlusion": {
+      "count": 50,
+      "mean_anls": 0.7013205389811427,
+      "abstention_rate": null,
+      "false_answer_rate": null,
+      "mean_latency_seconds": 1.476130215760022,
+      "clean_correct_count": 38,
+      "conditional_mean_anls": 0.9227901828699246,
+      "conditional_abstention_rate": null,
+      "conditional_false_answer_rate": null
+    },
+    "evidence_occlusion": {
+      "count": 50,
+      "mean_anls": null,
+      "abstention_rate": 0,
+      "false_answer_rate": 1,
+      "mean_latency_seconds": 1.4878168502799598,
+      "clean_correct_count": 38,
+      "conditional_mean_anls": null,
+      "conditional_abstention_rate": 0,
+      "conditional_false_answer_rate": 1
+    },
+    "jpeg_q35": {
+      "count": 50,
+      "mean_anls": 0.7131905080213904,
+      "abstention_rate": null,
+      "false_answer_rate": null,
+      "mean_latency_seconds": 1.490915071240024,
+      "clean_correct_count": 38,
+      "conditional_mean_anls": 0.9229286870250493,
+      "conditional_abstention_rate": null,
+      "conditional_false_answer_rate": null
+    }
+  },
+  "limitations": [
+    "Synthetic occlusion does not prove real-world robustness.",
+    "Small MVP samples should not be presented as benchmark-level evidence.",
+    "Evidence boxes require manual audit.",
+    "Conditional robustness uses only sources with clean ANLS >= 0.5."
+  ]
+}

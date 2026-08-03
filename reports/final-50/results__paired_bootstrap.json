@@ -1,0 +1,20 @@
+{
+  "difference_direction": "Qwen2.5-VL-3B minus SmolVLM-2.2B",
+  "clean_anls": {
+    "mean_difference": 0.1755982285258601,
+    "ci95_low": 0.04845351011217882,
+    "ci95_high": 0.3078647399749373,
+    "paired_source_count": 50,
+    "bootstrap_replicates": 10000,
+    "seed": 17
+  },
+  "evidence_abstention_rate": {
+    "mean_difference": 0.14,
+    "ci95_low": 0.06,
+    "ci95_high": 0.24,
+    "paired_source_count": 50,
+    "bootstrap_replicates": 10000,
+    "seed": 17
+  },
+  "note": "Intervals quantify uncertainty for this audited 50-document subset, not DocVQA-wide generalization."
+}
