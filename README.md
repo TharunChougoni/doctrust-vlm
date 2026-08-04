@@ -20,6 +20,34 @@ The completed Colab run compared SmolVLM 2.2B and Qwen2.5-VL 3B on 50 manually a
 
 The repository is public, so the Colab notebook clones it directly without credentials or secrets.
 
+## Results (final 50-document run)
+
+| Metric | SmolVLM 2.2B | Qwen2.5-VL 3B |
+|---|---:|---:|
+| Clean-correct documents | 38 / 50 | 45 / 50 |
+| Clean mean ANLS | 0.7213 | 0.8969 |
+| JPEG q35 conditional ANLS | 0.9229 | 0.9966 |
+| Blur 1.5 conditional ANLS | 0.9271 | 0.9987 |
+| Distractor conditional ANLS | 0.9228 | 0.9966 |
+| Evidence-occlusion abstention | 0.0% | 14.0% |
+| Evidence-occlusion false answers | 100.0% | 86.7% |
+| Mean latency per image | 1.49 s | 2.00 s |
+| Peak GPU memory | 9.05 GB | 13.04 GB |
+
+Qwen's paired clean-ANLS advantage was **+0.176** (95% bootstrap interval [+0.048, +0.308]) on this selected subset. Neither model abstains reliably when answer evidence is removed — the main evidence-grounding limitation.
+
+![Clean-image capability](reports/final-50/visuals/fig1_clean.png)
+
+![Nuisance robustness](reports/final-50/visuals/fig2_nuisance.png)
+
+![Evidence-occlusion behavior](reports/final-50/visuals/fig3_evidence.png)
+
+![Paired bootstrap intervals](reports/final-50/visuals/fig4_bootstrap.png)
+
+![Resource usage](reports/final-50/visuals/fig5_resources.png)
+
+Full raw predictions, manifests, configs, model revisions, metrics, and limitations are published in [`reports/final-50/RESULTS.md`](reports/final-50/RESULTS.md).
+
 ## Models
 
 - Local baseline: [`HuggingFaceTB/SmolVLM-500M-Instruct`](https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct)
